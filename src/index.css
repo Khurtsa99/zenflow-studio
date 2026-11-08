@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { @apply bg-mist font-sans text-ink-900 antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  ::selection { background: #BBD2FF; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tenger-500 focus-visible:ring-offset-2 focus-visible:ring-offset-mist disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.97]; }
+  .btn-primary { @apply btn bg-tenger-600 text-white hover:bg-tenger-700; }
+  .btn-outline { @apply btn border border-ink-200 bg-white text-ink-800 hover:border-ink-300 hover:bg-ink-50; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-saffron { @apply btn bg-saffron text-ink-900 hover:brightness-95; }
+  .input { @apply w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-tenger-500 focus:outline-none focus:ring-2 focus:ring-tenger-100; }
+  .input-error { @apply border-red-500 focus:border-red-500 focus:ring-red-100; }
+  .label { @apply mb-1.5 block text-sm font-semibold text-ink-700; }
+  .card { @apply rounded-3xl border border-ink-100 bg-white; }
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .chip { @apply inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-ink-200 bg-white px-4 py-2 text-sm font-semibold text-ink-700 transition hover:border-ink-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tenger-500; }
+  .chip-active { @apply border-tenger-600 bg-tenger-600 text-white hover:border-tenger-600; }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .is-dragging { scroll-snap-type: none !important; cursor: grabbing; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
